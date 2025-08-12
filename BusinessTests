@@ -1,0 +1,29 @@
+import unittest
+from main import solution_A
+from fractions import Fraction
+
+
+class TestMain(unittest.TestCase):
+    def test_solution_A(self):
+        result = 1 * 10
+        risks = Fraction(1/10)
+        acc = {"John": 22,
+               "Steve": 24,
+               "James": 30,
+               "Luke": 29}
+        acc2 = solution_A(acc, 30)
+        self.assertEqual(acc2, acc)
+        self.assertEqual(result, risks)
+        self.assertAlmostEqual(acc2, "john".lower())
+        self.assertNotEqual(acc2, result)
+        try:
+            solution_A("no solution found", 10)
+            assert False, "Expected a Solution"
+        except ValueError:
+            pass
+
+
+
+if __name__ == '__main__':
+    unittest.main()
+    
